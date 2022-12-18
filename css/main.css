@@ -46,7 +46,6 @@ header > h1 {
 .project__info {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
     font-family: "Roboto", sans-serif;
 }
 
@@ -69,6 +68,7 @@ header > h1 {
 
 .project__image {
     margin: 10px 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .project__image img {
