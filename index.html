@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porfolio de Charlie Levasseur</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="scripts/gallery.js"></script>
 </head>
 
 <body>
@@ -52,7 +54,7 @@
             </div>
         </div>
         <div class="project">
-            <div class="project__image"><img src="images/rc-car-controller.png"></div>
+            <div class="project__image" id="rc-car-img-container"><img src="images/rc-car-controller.png"></div>
             <div class="project__info">
                 <h2>Manette de tank téléguider</h2>
                 <p>
@@ -66,6 +68,17 @@
     <footer>
 
     </footer>
+
+    <script>
+        const tankImContainer = document.getElementById("rc-car-img-container");
+        const imgs = [];
+        for (let i = 1; i < 5; i++){
+            imgs.push("https://picsum.photos/id/"+i+"/100/100")
+        }
+        const rcCarGal = new ImageGallery(tankImContainer, imgs)
+
+
+    </script>
 </body>
 
 </html>
