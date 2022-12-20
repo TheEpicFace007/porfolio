@@ -16,6 +16,7 @@ class ImageGallery {
         this.imagesUrls = [this.container.querySelector('img').src, ...imagesUrls];
         this.currentImageIndex = 0;
         this._createGallery();
+        this.animation = null;
     }
 
     _createGallery() {
@@ -53,6 +54,33 @@ class ImageGallery {
     }
 
     _updateImage() {
-        this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+        if (this.animation == 'fade') {
+            const img = this.container.querySelector('img');
+            let opacity = 1;
+            const interval = setInterval(() => {
+                opacity -= 0.05;
+                img.style.opacity = opacity;
+                if (opacity <= 0) {
+                    img.src = this.imagesUrls[this.currentImageIndex];
+                    clearInterval(interval);
+                    let opacity = 0;
+                    const interval2 = setInterval(() => {
+                        opacity += 0.05;
+                        img.style.opacity = opacity;
+                        if (opacity >= 1) {
+                            clearInterval(interval2);
+                        }
+                    }, 50);
+                }
+            }, 50);
+        } else if (this.animation == 'flip') {
+            this.container.classList.add('flip');
+            setTimeout(() => {
+                this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+                this.container.classList.remove('flip');
+            }, 1000);
+        } else {
+            this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+        }
     }
 }
