@@ -33,6 +33,15 @@ class ImageGallery {
 
         leftArrow = this.container.insertBefore(leftArrow, this.container.firstChild);
         rightArrow = this.container.appendChild(rightArrow);
+
+        let counterContainer = document.createElement('div');
+        counterContainer.classList.add('counter-container');
+        counterContainer = this.container.appendChild(counterContainer);
+        this._counter = document.createElement('p');
+        this._counter.classList.add('counter');
+        this._counter.innerText = `${this.currentImageIndex + 1}/${this.imagesUrls.length}`;
+        counterContainer.appendChild(this._counter);
+        
         this.container.classList.add('image-gallery');
 
     }
@@ -79,8 +88,15 @@ class ImageGallery {
                 this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
                 this.container.classList.remove('flip');
             }, 1000);
+        } else if (this.animation == 'rotate-downscale'){
+            this.container.classList.add('rotate-downscale');
+            setTimeout(() => {
+                this.container.classList.remove('rotate-downscale');
+                this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+            }, 1000);
         } else {
             this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
         }
+        this._counter.innerText = `${this.currentImageIndex + 1}/${this.imagesUrls.length}`;
     }
 }
