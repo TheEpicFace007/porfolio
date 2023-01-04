@@ -86,13 +86,17 @@ class ImageGallery {
             this.container.classList.add('flip');
             setTimeout(() => {
                 this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+            }, 500);
+            setTimeout(() => {
                 this.container.classList.remove('flip');
             }, 1000);
         } else if (this.animation == 'rotate-downscale'){
             this.container.classList.add('rotate-downscale');
             setTimeout(() => {
-                this.container.classList.remove('rotate-downscale');
                 this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
+            }, 500);
+            setTimeout(() => {
+                this.container.classList.remove('rotate-downscale');
             }, 1000);
         } else {
             this.container.querySelector('img').src = this.imagesUrls[this.currentImageIndex];
