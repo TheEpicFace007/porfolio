@@ -64,6 +64,28 @@
                 <p class="project__link"><a href="https://github.com/TheEpicFace007/arduino-rc-tank">Visiter le projet github</a></p>
             </div>
         </div>
+        <div class="project">
+            <div class="project__image"><img src="images/drunkmeter.png"></div>
+            <div class="project__info">
+                <h2>Drunkmeter</h2>
+                <p>
+                    Ce projet est une application de bureau qui permet de calculer une dose d'alcool. Elle 
+                    a été programmer en python et utilise Tkinter.
+                </p>
+                <p class="project__link"><a href="https://github.com/TheEpicFace007/drunkmeter">Visiter le projet github</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project__image" id="qrcode-container"><img src="images/qr-code-creator-1.png"></div>
+            <div class="project__info">
+                <h2>QR Code Generator</h2>
+                <p>
+                    Ce projet est une application de bureau qui permet de créer des code QR. 
+                    Elle a été programmer en python et utilise Tkinter.
+                </p>
+                <p class="project__link"><a href="https://github.com/TheEpicFace007/qrcode-generator"></a></p>
+            </div>
+        </div>
     </main>
     <footer>
 
@@ -74,8 +96,10 @@
         const tankImgs = ["images/rc-tank-2.png", "images/rc-tank-3.png",
                         "images/rc-tank-4.png", "images/rc-tank-5.png", "images/rc-tank-6.png"]
         const tankGallery = new ImageGallery(tankImContainer, tankImgs)
-        tankGallery.animation = "rotate-downscale";
-
+        tankGallery.animation = "flip";
+        const qrcodeContainer = document.getElementById("qrcode-container");
+        const qrcodeGallery = new ImageGallery(qrcodeContainer, ["images/qr-code-creator-2.png", "images/qr-code-creator-3.png"]);
+        qrcodeGallery.animation = "rotate-downscale"
     </script>
 </body>
 
