@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.image-gallery > img {
+.image-gallery>img {
     align-self: center;
     flex-basis: 80%;
 }
@@ -27,6 +27,10 @@
     animation: rotatedownscale 1s;
 }
 
+.counter {
+    font-family: "Roboto", sans-serif;
+}
+
 @keyframes rotatedownscale {
     0% {
         transform: rotate(0deg) scale(1);
@@ -41,7 +45,7 @@
     }
 }
 
-@keyframes flip { 
+@keyframes flip {
     0% {
         transform: rotateY(0deg);
     }
