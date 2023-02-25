@@ -100,7 +100,7 @@ header h1, header h2, header h3, header h4, header h5, header h6 {
 .language-switcher__link {
     text-decoration: none;
     color: white;
-    background-color: rgb(101, 168, 0);
+    background-color: rgb(4, 193, 4);
 }
 
 .language-switcher__link:hover {
@@ -108,7 +108,7 @@ header h1, header h2, header h3, header h4, header h5, header h6 {
 }
 
 .language-switcher__link.active {
-    background-color: rgb(105, 214, 105);
+    background-color: rgb(38, 213, 61);
     text-decoration: underline;
 }
 
